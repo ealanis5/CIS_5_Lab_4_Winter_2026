@@ -5,6 +5,8 @@ Functions & Passing Methods
 Goal: Manage 5 student scores using different parameter passing
 Array (hard-coded):  {65, 82, 90, 45, 78} -> use these numbers for the lab
 
+youtube/link
+
 **Create your own main.cpp**
 
 Tasks:
