@@ -32,7 +32,7 @@ int main() {
    cout << "Original Scores: 65, 82, 90, 45, 78" << endl;
 
 // Calculating Sum of Five Numbers
-   const int arr[] = {65, 82, 90, 45, 78};
+   const int arr[5] = {65, 82, 90, 45, 78};
    int sum = 0;
    for (int i = 0; i < 5; ++i) {
        sum += arr[i];
@@ -44,7 +44,7 @@ int main() {
    cout << "The Average is: " << getaverage << endl;
 
 // Finding Minimum and Maximum Values
-    int values[]= {65,82,90,45,78};
+    int values[5]= {65,82,90,45,78};
     int min = 0;
     int max = 0;
       getMinMax(values, 5, &min, &max);
