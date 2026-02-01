@@ -32,13 +32,16 @@ int main() {
    cout << "Original Scores: 65, 82, 90, 45, 78" << endl;
 
 // Calculating Sum of Five Numbers
+   const int arr[] = {65, 82, 90, 45, 78};
    int sum = 0;
-   sum = addFiveNums(65, 82, 90, 45, 78);
+   for (int i = 0; i < 5; ++i) {
+       sum += arr[i];
+   }
    cout << "The Sum is: " << sum << endl;
-
+   
 // Calculating Average of Five Numbers
-   double average = static_cast<double>(sum) / 5;
-   cout << "The Average is: " << average << endl;
+   double getaverage = static_cast<double>(sum) / 5;
+   cout << "The Average is: " << getaverage << endl;
 
 // Finding Minimum and Maximum Values
     int values[]= {65,82,90,45,78};
@@ -47,44 +50,34 @@ int main() {
       getMinMax(values, 5, &min, &max);
       cout << "Min: " << min << ", Max: " << max << endl;
 
-// Finding Highest Score and Count of Passing Scores
-    int scores[] = {65, 82, 90, 45, 78};
-    int highestScore = scores[0];
-    int passCount = 0;
-    const int passingScore = 70;
-
-    for (int i = 0; i < 5; ++i) {
-        if (scores[i] > highestScore) {
-            highestScore = scores[i];
-        }
-        if (scores[i] >= passingScore) {
-            passCount++;
-        }
-    }
-
-    cout << "Highest Score: " << highestScore << endl;
-    cout << "Number of Passing Scores: " << passCount << endl;
-
 // Adding bonus to scores
     int bonus = 5;
     for (int i = 0; i < 5; ++i) {
-        scores[i] += bonus;
+        values[i] += bonus;
     }
-
-    cout << "Scores after adding bonus:" << endl;
+    cout << "Scores after adding bonus of " << bonus << ": ";
     for (int i = 0; i < 5; ++i) {
-        cout << scores[i] << " ";
+        cout << values[i] << " ";
     }
-    cout << endl;
-
-// Calculating 
-int countPassed = 0;
-for (int i = 0; i < 5; ++i) {
-    if (scores[i] >= passingScore) {
-        countPassed++;
+    cout << endl; 
+    
+// Finding Highest Score
+    const int* scores = values;
+    int highestScore = scores[0];
+    for (int i = 1; i < 5; ++i) {
+        if (scores[i] > highestScore) {
+            highestScore = scores[i];
+        }
     }
-}
-cout << "Number of scores that passed after bonus: " << countPassed << endl;  
+    cout << "Highest Score after bonus: " << highestScore << endl;
 
+// Finding number or scores that passed (>=70)
+    int passCount = 0;
+    for (int i = 0; i < 5; ++i) {
+        if (values[i] >= 70) {
+            passCount++;
+        }
+    }
+    cout << "Number of scores that passed (>=70): " << passCount << endl;
    return 0;
 }     
